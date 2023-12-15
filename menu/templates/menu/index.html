@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load tree_tag %}
+{% block content %}
+    {% if menus %}
+        <h3><a href="{% url 'menu:main_menu' %}">Список всех меню</a></h3>
+        <ul>
+            {% for menu in menus%}
+                <li><a href='{{ menu }}'> {{ menu }}</a></li>
+            {% endfor %}
+        </ul>
+
+    {% else %}
+        <h3><a href="{% url 'menu:main_menu' %}">В список всех меню</a></h3>
+        {% draw_menu menu_name %}
+
+    {% endif %}
+{% endblock %}
