@@ -1,6 +1,6 @@
 {% for item in menu_items %}
     <ul>
-        <li {% if active_item and active_item.item.id == item.item.id %} class="active"{% endif %}>
+        <li {% if active_item and active_item == item.item.url %} style="color:red" class="active"{% endif %}>
             <a href="{{ item.item.url }}">{{ item.item.name }}</a>
         </li>
         {% if item.children %}

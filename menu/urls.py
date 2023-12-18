@@ -6,4 +6,5 @@ app_name = 'menu'
 urlpatterns = [
     path('', index, name='main_menu'),
     path('<str:menu_name>/', draw_menu, name='draw_menu'),
-]
+    path('<str:menu_name>/<str:menu_item>', draw_menu, name='draw_menu'),
+    ]

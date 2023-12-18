@@ -7,5 +7,5 @@ def index(request):
     return render(request, 'menu/index.html', {'menus': Menu.objects.all()})
 
 
-def draw_menu(request, menu_name):
-    return render(request, 'menu/index.html', {'menu_name': menu_name})
+def draw_menu(request, menu_name, menu_item=None):
+    return render(request, 'menu/index.html', {'menu_name': menu_name, 'menu_item': menu_item})
